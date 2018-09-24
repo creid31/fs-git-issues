@@ -14,7 +14,10 @@ Upon creating an issue, the application emails the "support person" notifying th
   -d '{"issue":
 	{ "url": "test.com", "id": 12345678, "number": 1}}'
   ```
-5. Confirm in the logs that an email was sent with populated data
+5. Confirm in the logs that an email was sent with populated data OR set up your local machine to send emails
 
 ## With Heroku
-Refer to [Heroku's Getting Started with Rails documentation](https://devcenter.heroku.com/articles/getting-started-with-rails5#add-the-pg-gem). Use the link (for example, https://hidden-garden-91091.herokuapp.com/notify) provided to send a notification. 
+1. Refer to [Heroku's Getting Started with Rails documentation](https://devcenter.heroku.com/articles/getting-started-with-rails5#add-the-pg-gem) to push the application to Heroku instance.
+2. Use `figaro heroku:set` to set environment variables on deployed app. See [Figaro documentation](https://github.com/laserlemon/figaro) for more details.
+3.  Use the link provided by Heroku (for example, https://hidden-garden-91091.herokuapp.com/notify) to send a notification to the deployed instance.
+4. Check on deployed logs that an issue was created and an email was attempted OR setup Heroku for sending emails
